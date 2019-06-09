@@ -7,39 +7,37 @@ library(stringr)
 
 
 #Reading in stocks in the basic insdutries sector
-basic <- read.csv("/Users/devansh/Downloads/companylist.csv")
+basic <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_basic.csv")
 
 #Reading in stocks in the capital goods sector
-capital_goods <- read.csv("/Users/devansh/Downloads/companylist (1).csv")
+capital_goods <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_capital_goods.csv")
 
 #Reading in stocks in the consumer non-durables sector
-con_non_durables <- read.csv("/Users/devansh/Downloads/companylist (2).csv")
+con_non_durables <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_con_non-durables.csv")
 
 #Reading in stocks in the consumer services sector
-con_services <- read.csv("/Users/devansh/Downloads/companylist (3).csv")
+con_services <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_con_services.csv")
 
 #Reading in stocks in the enegry sector
-energy <- read.csv("/Users/devansh/Downloads/companylist (4).csv")
+energy <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_energy.csv")
 
 #Reading in stocks in the finance sector
-finance <- read.csv("/Users/devansh/Downloads/companylist (5).csv")
+finance <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_finance.csv")
 
 #Reading in stocks in the healthcare sector
-healthcare <- read.csv("/Users/devansh/Downloads/companylist (6).csv")
+healthcare <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_healthcare.csv")
 
 #Reading in stocks in the miscellaneous sector
-miscellaneous <- read.csv("/Users/devansh/Downloads/companylist (7).csv")
+miscellaneous <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_miscellaneous.csv")
 
 #Reading in stocks in the public utilities sector
-utilities <- read.csv("/Users/devansh/Downloads/companylist (8).csv")
+utilities <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_utilities.csv")
 
 #Reading in stocks in the technology sector
-technology <- read.csv("/Users/devansh/Downloads/companylist (9).csv")
-head(technology)
+technology <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_technology.csv")
 
 #Reading in stocks in the transportation sector
-transportation <- read.csv("/Users/devansh/Downloads/companylist (10).csv")
-head(transportation)
+transportation <- read.csv("https://raw.githubusercontent.com/devansh2105/Stocks_Trends/master/Data/companylist_transportation.csv")
 
 #Combining all the datasets of the stocks in different sectors to one complete dataset 
 sectors <- rbind(basic, capital_goods, con_non_durables, con_services, energy, finance, healthcare, miscellaneous, utilities, technology, transportation)
@@ -54,7 +52,7 @@ sectors_reduced$Symbol <- as.character(sectors_reduced$Symbol)
 
 #Reading in the daily historical data of 8,032 stock tickers on AMEX, NYSE, and NASDAQ 
 #from January 2, 2019, to March 1, 2019
-stocks <-read.csv("/Users/devansh/Downloads/history_60d.csv")
+stocks <-read.csv("/Users/devansh/Downloads/stocks.csv")
 
 #Creating the valueChange variable that is the difference between the closing and opening prices of a stock 
 stocks <- mutate(stocks, valueChange = close - open)
